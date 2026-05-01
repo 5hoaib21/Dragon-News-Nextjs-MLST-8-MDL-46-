@@ -6,7 +6,7 @@ import { FaEye } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 
 const NewsCard = ({ news }) => {
-  console.log(news, "news");
+  // console.log(news, "news");
   return (
     <div className="card bg-base-100  shadow-sm">
       <div className="card-body">
@@ -44,8 +44,14 @@ const NewsCard = ({ news }) => {
         <p className="text-sm line-clamp-3"> {news.details}</p>
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <h2 className="flex items-center gap-2"><IoIosStar className="text-lg text-yellow-500" />{news.rating.number}</h2>
-            <h2 className="flex items-center gap-2"><FaEye className="text-lg" />{news.total_view}</h2>
+            <h2 className="flex items-center gap-2">
+              <IoIosStar className="text-lg text-yellow-500" />
+              {news.rating.number}
+            </h2>
+            <h2 className="flex items-center gap-2">
+              <FaEye className="text-lg" />
+              {news.total_view}
+            </h2>
           </div>
           <Link href={`/news/${news._id}`}>
             <button className="btn">See Mode</button>
